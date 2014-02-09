@@ -1,0 +1,30 @@
+<html>
+<meta charset="utf-8">
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="d3.slider.css">
+</head>
+<body>
+
+<div class="wrapper">
+   <div id="timeline1"></div>
+   <div id="slider1"></div>
+    <div id="textDate"></div>
+</div>
+
+<div id="option">
+    <input name="updateButton" 
+                 type="button" 
+                value="Next Event" 
+                onclick="updateTimeline()" />
+</div>
+<script src="http://d3js.org/d3.v3.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+<script src="interaction.js"></script>
+<script src ="d3.slider.js"></script>
+    <div class="infobox">
+        <p>Here is where we will say something</p>
+    </div>
+</body>
+</html>

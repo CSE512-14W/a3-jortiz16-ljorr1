@@ -1,0 +1,64 @@
+circle {
+    stroke: #fff;
+    stroke-width: 1.5px;
+}
+line {
+    stroke: #999;
+    stroke-opacity: .6;
+}
+
+span {
+    color: black;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: verdana;
+}
+
+.infobox {
+    position: absolute;
+    width: 200px;
+    padding: 10px;
+    background-color: rgba(255,255,255,1);
+}
+
+.infobox p {
+    color: #f00;
+    text-align: center;
+    font-family: verdana;
+}
+
+/* from http://bl.ocks.org/Caged/6476579 */
+.d3-tip {
+  line-height: 1;
+  font-weight: normal;
+  padding: 5px;
+  background: none;
+  color: #fff;
+  border-radius: 2px;
+}
+
+/*from https://gist.github.com/sfrdmn/1437516*/
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/*from https://gist.github.com/sfrdmn/1437516; used to style northward tooltips differently*/
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+
+#option
+{
+  float:right;
+  width:200px;
+}
