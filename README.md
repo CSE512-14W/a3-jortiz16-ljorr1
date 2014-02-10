@@ -18,11 +18,11 @@ Our goal was to be able to see the accusations of the villagers against each oth
 Figure 1: Accuser/Accused and the Families Relationships
 
 There are three interactions we planned in this sketch:
- 1) Hover: Users can hover over any node to see the name of the person the node 
+1. Hover: Users can hover over any node to see the name of the person the node 
 represents
-2)  Checkbox: The user can select to see either those people in favor of Parris (a 
+2.  Checkbox: The user can select to see either those people in favor of Parris (a 
 prominent minister around the Salem witch trials) or against. We encode each of the sides by a color of the node
-3)  Slider: The user can move the slider across a timeline to see how events 
+3.  Slider: The user can move the slider across a timeline to see how events 
 progressed. At a certain time, we only show the edges (accusations) that occurred during that time
 
 ![Alt text](https://raw.github.com/CSE512-14W/a3-jortiz16-ljorr1/gh-pages/WriteUpPics/Fig2.png)
@@ -43,10 +43,10 @@ For the final visualization, there are two phases. First, the viewer is shown th
  
 ##Changes Between the Storyboard and Final 
 -Slider: The timeline to see events on the visualization was originally intended to be a slider. Upon implementing this, we realized it was difficult to detect if the user placed the slider exactly on one date or another, making our encoding of red edges as events occurring at a particular date ineffective. We decided to work on a feature that allowed the user to click through the events. Once they reached the end, the timeline would restart at the beginning. 
--Checkbox: We realized that although clicking a checkbox may be more exciting, it was not the most effective means for communicating village divisions. We could easily use node color to statically represent the three categories of villagers (pro-minister, anti-minister, and unknown). This eliminates possible confusion when using a checkbox and keeps the focus on the accusations over time, not the changing node color.
--Additional Text Feature: We had initially planned to place the information about each person in a tooltip box once the user hovered her mouse over a node. We decided against this since the descriptions could be long enough to make the tool-tip box occlude important connections. We instead added a text box on the right that described the person in more detail while keeping the tooltip displaying the name.
--Background Button: Since the user may forget or not read the historical context upon entering our visualization, we decided to add a background information button to allow the user to return to that screen.
--One of the accused in our dataset died in prison. We felt that even though she was not hung, she was killed because of the witch trials so included that death in our visualization.
+- Checkbox: We realized that although clicking a checkbox may be more exciting, it was not the most effective means for communicating village divisions. We could easily use node color to statically represent the three categories of villagers (pro-minister, anti-minister, and unknown). This eliminates possible confusion when using a checkbox and keeps the focus on the accusations over time, not the changing node color.
+- Additional Text Feature: We had initially planned to place the information about each person in a tooltip box once the user hovered her mouse over a node. We decided against this since the descriptions could be long enough to make the tool-tip box occlude important connections. We instead added a text box on the right that described the person in more detail while keeping the tooltip displaying the name.
+- Background Button: Since the user may forget or not read the historical context upon entering our visualization, we decided to add a background information button to allow the user to return to that screen.
+- One of the accused in our dataset died in prison. We felt that even though she was not hung, she was killed because of the witch trials so included that death in our visualization.
 
 ##Development Process
 #Gathering Data
