@@ -45,9 +45,10 @@ function updateTimeline() {
 function updateTimelineBack() {
 
     //restart
-    if(valueSlider == yearsUNIQUE[0])
+    if(valueSlider == yearsUNIQUE[0] || valueSlider == 0)
     {
-      counter = 0;
+      counter = yearsUNIQUE.length-1;
+      console.log(counter);
 	  
     }
 	else{
@@ -218,7 +219,7 @@ d3.csv("nodes.csv", function(error1, nodes) {
                     return 2;
                 })
                 .style("stroke", "white")
-                .attr("opacity", "1");
+                .attr("opacity", "0");
 
             var accusations = svg.selectAll(".accusation")
                 .attr("marker-end", "url(#arrowhead)");
@@ -277,9 +278,9 @@ d3.csv("nodes.csv", function(error1, nodes) {
             //from https://gist.github.com/sfrdmn/1437516
             .on("click", function(d) {
                 d3.select(".infobox").style("display", "block");
-                d3.select(".infobox").select("p:nth-child(1)").text("Name: " + d.name);
+                d3.select(".infobox").select("p:nth-child(1)").html("<b>" + d.name + "</b>").style("color", color(getPetitionId(d.petition)));
                 d3.select(".infobox").select("p:nth-child(2)").text("Age: " + (d.age == "" ? "Unknown" : d.age));
-                d3.select(".infobox").select("p:nth-child(3)").text(d.info);
+                d3.select(".infobox").select("p:nth-child(3)").text(d.info).style("line-height", "18px");
             });
 
 
@@ -324,9 +325,9 @@ d3.csv("nodes.csv", function(error1, nodes) {
                 link.style("opacity", function(d) {
                     if (valueSlider.getTime() > d.value.getTime()) {
                         var diff = Math.abs(valueSlider.getTime() - d.value.getTime());
-                        var scaleDIFF = d3.scale.linear().domain([0, 17794800000]).range([0, 1]);
+                        var scaleDIFF = d3.scale.linear().domain([0, 17794800000]).range([0.1, 0.9]);
                         var mapper = 1 - scaleDIFF(diff);
-                        return mapper/2;
+                        return mapper;
                     } else if (valueSlider < d.value) {
                         return 0;
                     } else {
@@ -337,9 +338,9 @@ d3.csv("nodes.csv", function(error1, nodes) {
                 marker.style("stroke-opacity", function(d) {
                     if (valueSlider.getTime() > d.value.getTime()) {
                         var diff = Math.abs(valueSlider.getTime() - d.value.getTime());
-                        var scaleDIFF = d3.scale.linear().domain([0, 17794800000]).range([0, 1]);
+                        var scaleDIFF = d3.scale.linear().domain([0, 17794800000]).range([0.1, 0.9]);
                         var mapper = 1 - scaleDIFF(diff);
-                        return mapper/2;
+                        return mapper;
                     } else if (valueSlider < d.value) {
                         return 0;
                     } else {

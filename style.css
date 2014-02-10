@@ -21,15 +21,15 @@ span {
 .infobox {
     position: absolute;
     right: 15px;
-    top: 50%;
+    top: 35%;
     width: 200px;
     height: 300px;
     padding: 10px;
     background-color: rgba(255, 255, 255, 1);
 }
 .infobox p {
-    color: #f00;
-    font-size: 11px;
+    color: #000;
+    font-size: 12px;
     text-align: left;
     font-family: verdana;
 }
@@ -59,6 +59,12 @@ span {
     top: 100%;
     left: 0;
 }
+#legend {
+    border:50px solid white;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
 #option {
     float: right;
     border: 10px;
@@ -80,7 +86,7 @@ body {
     position: absolute;
     left: 0px;
     top: 0px;
-    height: 200%;
+    height: 100%;
     width: 100%;
     overflow: visible;
     text-align:center;

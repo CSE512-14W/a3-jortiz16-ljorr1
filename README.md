@@ -18,10 +18,13 @@ Our goal was to be able to see the accusations of the villagers against each oth
 Figure 1: Accuser/Accused and the Families Relationships
 
 There are three interactions we planned in this sketch:
-1. Hover: Users can hover over any node to see the name of the person the node 
+
+1.  Hover: Users can hover over any node to see the name of the person the node 
 represents
+
 2.  Checkbox: The user can select to see either those people in favor of Parris (a 
 prominent minister around the Salem witch trials) or against. We encode each of the sides by a color of the node
+
 3.  Slider: The user can move the slider across a timeline to see how events 
 progressed. At a certain time, we only show the edges (accusations) that occurred during that time
 
@@ -37,9 +40,9 @@ In Figure 4, we display a sketch of the background information. We decided to pr
 Figure 4: Background Information Box
  
 ##Description of Final Visualization
-For the final visualization, there are two phases. First, the viewer is shown the historical background behind the Salem Witch Trials. This feature is informative and may even provide the user with curiosity as to how certain accusations unfolded throughout the trials. Once the user exits the screen, she is taken to the second phase of the visualization. Here, she can begin to explore the dataset. The dataset consists of nodes that are encoded by color based on their affiliation with respect to Minister Parris. Families of nodes are encoded through light-blue “hub” groupings. There are several options that can occur from this point. One, the user may select the “Background” bottom and be taken back to the first phase. Two, the viewer may select either the “Next” or “Back” button. These buttons help the user navigate through each of the events based on the time. During a selected time, the graph will display those accused and their accusers based on the red paths that are displayed. If a viewer continues to proceed through more events, the old events are dimmed, showing the progression of time. Nodes that are outlined in red represent those who died due to the trials. At any time, the user may decide to click on a node. This will display information on the right side of the page including the person’s name, age, and a small description. 
+For the final visualization, there are two phases. First, the viewer is shown the historical background behind the Salem Witch Trials. This feature is informative and may even provide the user with curiosity as to how certain accusations unfolded throughout the trials. Once the user exits the screen, she is taken to the second phase of the visualization. Here, she can begin to explore the dataset. The dataset consists of nodes that are encoded by color based on their affiliation with respect to Minister Parris. Families of nodes are encoded through light-grey “hub” groupings. There are several options that can occur from this point. One, the user may select the “Background” bottom and be taken back to the first phase. Two, the viewer may select either the “Next” or “Back” button. These buttons help the user navigate through each of the events based on the time. During a selected time, the graph will display those accused and their accusers based on the red paths that are displayed. If a viewer continues to proceed through more events, the old events are dimmed, showing the progression of time. Nodes that are outlined in red represent those who died due to the trials. At any time, the user may decide to click on a node. This will display information on the right side of the page including the person’s name, age, and a small description. 
 
-*PICTURE HERE: DO THIS AFTER LAYOUT IS DONE
+![Alt text](https://raw.github.com/CSE512-14W/a3-jortiz16-ljorr1/gh-pages/WriteUpPics/FinalVersion.png)
  
 ##Changes Between the Storyboard and Final 
 -Slider: The timeline to see events on the visualization was originally intended to be a slider. Upon implementing this, we realized it was difficult to detect if the user placed the slider exactly on one date or another, making our encoding of red edges as events occurring at a particular date ineffective. We decided to work on a feature that allowed the user to click through the events. Once they reached the end, the timeline would restart at the beginning. 
@@ -71,8 +74,10 @@ Once we had our dataset ready to go, we set out formalizing our storyboard and s
 We knew we wanted to include the villagers’ leanings for or against the minister, so we thought to add a checkbox for the three possible labels and to color the nodes depending on which box was checked. The last major interaction was to include a tooltip that hovered over a node showing information about that node. We felt this is a standard way of conveying interesting information at the user’s request while leaving the visualization clean and uncluttered. We also wanted a background information slide to give the user some context to understand why the node colorings are important.
 
 After finishing our design, we split up the work as shown below.
-    Laurel: Finalize and proof-read the villager information, format the data to work with the visualization, determine the layout of the nodes, set up links and node colors, develop tool-tips and information box, create family groupings, make background information slide
-    Jen: Sketch up our storyboards, develop the slider to interact with the links and the “next”/”back” buttons, determine timing so that all the right design encodings turned on at the right times, create a legend
+
+Laurel: Finalize and proof-read the villager information, format the data to work with the visualization, determine the layout of the nodes, set up links and node colors, develop tool-tips and information box, create family groupings, make background information slide  
+    
+Jen: Sketch up our storyboards, develop the slider to interact with the links and the “next”/”back” buttons, determine timing so that all the right design encodings turned on at the right times, create a legend  
 
 Below we highlight some of our more major design decisions.
 
