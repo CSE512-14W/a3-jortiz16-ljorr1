@@ -14,7 +14,7 @@ The event we wanted to visualize was the Salem Witch Trials, which occurred in S
 ##Storyboard Description
 Our goal was to be able to see the accusations of the villagers against each other through a visualization. In the sketch below we show some of the interactions we wish to see through a network graph. Each node represents a person and each edge represents an accused/accuser relationships where the edge arrow points to the accused. Each family member (a family is the people who share a last name) is connected to a “family” node through an undirected edge. In the image below, we show examples of each. 
 
-![Alt text](https://raw.github.com/ljorr1/a3-jortiz16-ljorr1/gh-pages/WriteUpPics/Fig1.png)
+![Alt text](https://raw.github.com/CSE512-14W/a3-jortiz16-ljorr1/gh-pages/WriteUpPics/Fig1.png)
 Figure 1: Accuser/Accused and the Families Relationships
 
 There are three interactions we planned in this sketch:
@@ -25,15 +25,15 @@ prominent minister around the Salem witch trials) or against. We encode each of 
 3)  Slider: The user can move the slider across a timeline to see how events 
 progressed. At a certain time, we only show the edges (accusations) that occurred during that time
 
-![Alt text](https://raw.github.com/ljorr1/a3-jortiz16-ljorr1/gh-pages/WriteUpPics/Fig2.png)
+![Alt text](https://raw.github.com/CSE512-14W/a3-jortiz16-ljorr1/gh-pages/WriteUpPics/Fig2.png)
 Figure 2: Hover and Checkbox Interactions
 
-![Alt text](https://raw.github.com/ljorr1/a3-jortiz16-ljorr1/gh-pages/WriteUpPics/Fig3.png)
+![Alt text](https://raw.github.com/CSE512-14W/a3-jortiz16-ljorr1/gh-pages/WriteUpPics/Fig3.png)
 Figure 3: Hover and Checkbox Interactions
 
 In Figure 4, we display a sketch of the background information. We decided to provide background information to the visualization in case the user wanted to understand more about the events that took place during the trials. After the user reads the box, she may exit in order to start exploring the data.
  
-![Alt text](https://raw.github.com/ljorr1/a3-jortiz16-ljorr1/gh-pages/WriteUpPics/Fig4.png)
+![Alt text](https://raw.github.com/CSE512-14W/a3-jortiz16-ljorr1/gh-pages/WriteUpPics/Fig4.png)
 Figure 4: Background Information Box
  
 ##Description of Final Visualization
@@ -52,13 +52,13 @@ For the final visualization, there are two phases. First, the viewer is shown th
 #Gathering Data
 We found potential datasets at http://www.tulane.edu/~salem/. This website was made by Richard B. Latner, a professor at Tulane University, and his goal is to take viewers through a basic investigation of data he provides on the Salem Witch Trials to shed some light on why the trials occurred. He also produces some basic graphs showing interesting trends such as a histogram of the number of witch accusations over time.
 
-![Alt text](https://raw.github.com/ljorr1/a3-jortiz16-ljorr1/gh-pages/WriteUpPics/Histogram.png)
+![Alt text](https://raw.github.com/CSE512-14W/a3-jortiz16-ljorr1/gh-pages/WriteUpPics/Histogram.png)
 
 After going through his website, we had a clear sense that there were some interesting trends to show and wanted to do it in a better way than a histogram. The data we received from his website included a list of all the people accused of witchcraft in Massachusetts and a list of people living in Salem Village who were supportive of the minister, against the minister, or did not state their opinions. By going through our visualization, you will understand why the minister is important information.
 
 The main problem we had with using this data alone was that we only had the witches accused, not the accusers, and we only had more detailed information for the people living in Salem Village, not neighboring towns. In Tableau, we played around with just visualizing the number of accusations per town over time, but that was not as interesting nor very engaging.
     
-![Alt text](https://raw.github.com/ljorr1/a3-jortiz16-ljorr1/gh-pages/WriteUpPics/Fig5.png)
+![Alt text](https://raw.github.com/CSE512-14W/a3-jortiz16-ljorr1/gh-pages/WriteUpPics/Fig5.png)
 Figure 5: Snapshot of one month of accusations per village
 
 We then decided to focus only on the people of Salem Village and gather more data on who accused whom because we felt showing the social interactions would be the most interesting. We used http://salem.lib.virginia.edu/home.html and http://www.17thc.us/primarysources/ to look at court records from that time. For each person who lived in Salem Village and was accused of witchcraft, we recorded all the people who testified against him or her in court (in a court record titled “person A vs person B”, we recorded person A if B was one of our accused witches). We then cross-referenced these people with the data on who supported the minister or not to associate a label with each person in our data: pro-minister, anti-minister, unknown. The main hurdle in the cross-referencing was naming. There were misspellings and name errors in the Tulane dataset. For example, one sheet would have the name John Willkins and another sheet would have the name John Wilkens when they were the same person. After resolving these errors and gathering the accusation data, we read through some of the court records and used Wikipedia to come up with a sentence or two of information on each person in our dataset. This was a very time consuming part because although reading through old court records is entertaining, trying to understand 17th century english court record shorthand is not straightforward.
