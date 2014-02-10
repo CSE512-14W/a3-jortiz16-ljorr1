@@ -18,10 +18,13 @@ Our goal was to be able to see the accusations of the villagers against each oth
 Figure 1: Accuser/Accused and the Families Relationships
 
 There are three interactions we planned in this sketch:
-1. Hover: Users can hover over any node to see the name of the person the node 
+
+1.  Hover: Users can hover over any node to see the name of the person the node 
 represents
+
 2.  Checkbox: The user can select to see either those people in favor of Parris (a 
 prominent minister around the Salem witch trials) or against. We encode each of the sides by a color of the node
+
 3.  Slider: The user can move the slider across a timeline to see how events 
 progressed. At a certain time, we only show the edges (accusations) that occurred during that time
 
@@ -71,8 +74,10 @@ Once we had our dataset ready to go, we set out formalizing our storyboard and s
 We knew we wanted to include the villagers’ leanings for or against the minister, so we thought to add a checkbox for the three possible labels and to color the nodes depending on which box was checked. The last major interaction was to include a tooltip that hovered over a node showing information about that node. We felt this is a standard way of conveying interesting information at the user’s request while leaving the visualization clean and uncluttered. We also wanted a background information slide to give the user some context to understand why the node colorings are important.
 
 After finishing our design, we split up the work as shown below.
-    Laurel: Finalize and proof-read the villager information, format the data to work with the visualization, determine the layout of the nodes, set up links and node colors, develop tool-tips and information box, create family groupings, make background information slide
-    Jen: Sketch up our storyboards, develop the slider to interact with the links and the “next”/”back” buttons, determine timing so that all the right design encodings turned on at the right times, create a legend
+
+Laurel: Finalize and proof-read the villager information, format the data to work with the visualization, determine the layout of the nodes, set up links and node colors, develop tool-tips and information box, create family groupings, make background information slide  
+    
+Jen: Sketch up our storyboards, develop the slider to interact with the links and the “next”/”back” buttons, determine timing so that all the right design encodings turned on at the right times, create a legend  
 
 Below we highlight some of our more major design decisions.
 
