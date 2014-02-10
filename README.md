@@ -1,11 +1,11 @@
-###Project Name
+#Project Name
 Visualizing the Salem Witch Trials
 
-#Team Members
+###Team Members
 - Laurel Orr ljorr1@cs.washington.edu
 - Jennifer Ortiz:  jortiz16@cs.washington.edu
 
-#Running Instructions
+###Running Instructions
 You can access our visualization at http://cse512-14w.github.io/a3-jortiz16-ljorr1/. You can also download the files into one folder, navigate to that folder in the terminal, run `python -m SimpleHTTPServer 8888`, and access it from http://localhost:8888/index.html.
 
 ##Background
@@ -65,7 +65,7 @@ We then decided to focus only on the people of Salem Village and gather more dat
 
 From start to finish, we augmented our existing dataset on the witches accused in Salem Village to create a master list of Salem villagers who accused the witches, when they did so, and if they supported the minister or not. We split the work between us evenly by having Laurel take care of cleaning the data, Jen got the list of accusers, and we divided the list of villagers in half and had each member collect sentences of her half. This process took a combined time of probably 40 hours which is kind of ridiculous, but we were stubbornly determined to get the data we wanted.
 
-#Deciding on a Goal
+###Deciding on a Goal
 Once we had our dataset ready to go, we set out formalizing our storyboard and splitting up the work. We knew we wanted to do a social network interaction to show the relationship between the accusers and accused. We also knew that the time frame of the accusations was interesting because of the histogram from the Tulane website, so we decided to have our interaction include going through the months and seeing which accusations occurred when, preferably with some form of a slider. The other social interactions were familial bonds, and instead of having the clutter of each group of villagers with the same last name being in a complete graph (all members connected to each other), we decided to have each member connect to one node which represented the family.
 
 We knew we wanted to include the villagers’ leanings for or against the minister, so we thought to add a checkbox for the three possible labels and to color the nodes depending on which box was checked. The last major interaction was to include a tooltip that hovered over a node showing information about that node. We felt this is a standard way of conveying interesting information at the user’s request while leaving the visualization clean and uncluttered. We also wanted a background information slide to give the user some context to understand why the node colorings are important.
@@ -76,26 +76,26 @@ After finishing our design, we split up the work as shown below.
 
 Below we highlight some of our more major design decisions.
 
-#Node Layout
+###Node Layout
 The first step was to determine how the nodes were going to be presented on the visualization. From looking online and at examples, we came across the D3 forced layout which represents nodes and edges as objects and forces that act on each other. After taking and modifying sample code, we had a basic layout of all the nodes, but did not like the ability for the user to drag the nodes around. The dragging motion really emphasized the forces acting on the nodes rather than the nodes themselves. We did not want that added distraction, so changed to a static force layout where instead of calling the force function at each tick, we called the force function 500,000 times and then displayed the resulting nodes. This did mean that whenever you refreshed the page, you would get a different layout. We played around with the idea of using the force layout to find exact x and y positions of the nodes and then hard code those into the data, but we thought the changing layout facilitated exploration. We did not know what the best layout was for this data and didn’t want to restrict potential data exploration. What if one particular layout highlighted some trend that was less apparent in other layouts? Thus, we decided to stay with a static force layout that changed on a page refresh.
 
 The next key feature was choosing how to represent families. Our original plan was to have all members of one family connect to a family node. When we implemented this, the layout was unfocused and the members of one family were scattered across the graph. The family nodes, which were a different color, just seemed distracting and confusing. So, we needed to connect the families to each other more closely without sacrificing clarity. To connect the families, we did make each family unit a complete subgraph (and just not display the links) and made the links between them be a smaller length than the accusation links. These family units were more connected but it still wasn’t clear if a group that seemed to exist on the data was a family or not. To tackle his last problem, we decided to highlight the background of the nodes that are in a family. If a user wanted to know specifically which family one group is, she simply had to drag her mouse over the node to activate the name tooltip to see the last name.
 
 Overall the hardest part of the node layout was getting the background shaded hulls, which represented the families, to work. The force layout was fairly straightforward, and although it took a while to get the data in the proper format, it was not a challenging task. The overall time it took to implement the layout was roughly 10 hours.
  
-#Slider
+###Slider
 The timeline for the graph was initially meant to be a slider. The slider template was obtained from a Github project. The viewer would slide a handle across the timeline to see changes in events based on the graph. This did not work out since based on the domain, it was difficult to see specific events. In other words, the user had to move the slider at a very specific position in order to see an event. In some cases, we were even not able to find certain events through this method. Thus, we changed the code to only show discrete steps. It was a challenge to figure out how to make the timeline show the dates from the data. Upon reading the documentation we found out that the timeline template we used was actually based on the Axis class from d3. Once we figured this out, we were able to create our own Axis based on the dates and then proceeded to attach it to the timeline. We also disabled the ability to slide the handle of the timeline. We felt that it would confuse the user if she tried to slide the handle to a date where there weren’t any events. Also, moving a slider indicates a continuity in the events that is not true in our data. Accusations occurred in groupings at discrete times, not continuously throughout 1692. Instead, the user can now navigate using the “Next” and “Back” button. 
 
 For each event on the timeline, we made sure to show the appropriate events on the graph. There were two things that updated through each step. First, the slider needed to update its position. The way we did this is by deleting the contents of the div container holding the timeline and proceeded to add another timeline with the correct position. Second, the graph paths needed to be updated. Since each edge has a date, we were able to color those appropriately. When the timeline is pointing to a certain date, all the edges with matching dates are colored in red. Also, all the markers (arrowheads) were shown as well. All edges/markers where the date is before the date shown is colored gray at a certain opacity. The farther away the current time is, the lighter the path became. Overall, the slider took about 20 hours to implement. 
 
-#Miscellaneous
+###Miscellaneous
 Implementing the background information slide was not too challenging. We had to make sure the user could navigate from the slide to the visualization and back again smoothly, and we used buttons to do so. We also added an opaque background to indicate that the user is not supposed to interact with the visualization while reading the information. The hardest part was positioning the button in a logical place.
 
 Once we learning that our descriptions of the villagers were too long for the tool-tip, we moved the information section to an outside box. We liked this feature because it allowed a user to click for more information and for that information to stay around after the user moved her mouse away from a node. This way, users would have to remember less information and could focus more on the interaction. The hardest part of this was also getting the box to be positioned nicely.
 
 The overall time to implement the miscellaneous features and do small changes such as finding the right colors and formatting the layout took about 10 hours.
 
-#Time Breakdown
+###Time Breakdown
 Overall, the data gathering took about 40 hours, the design and coding took about 40 hours, and the write-up took about 7 hours. The hardest part was getting the data we needed and sifting through the court records. We are really pleased with the data we got, and we knew we had to get a lot of it ourselves, but it still took a long time. The coding was not easy, but it was fairly enjoyable and made possible because of google. The most challenging part of the coding was getting the slider to work and getting the node layout to look decent. 
 
 ##Source Code
