@@ -6,7 +6,7 @@ Visualizing the Salem Witch Trials
 - Jennifer Ortiz:  jortiz16@cs.washington.edu
 
 ###Running Instructions
-You can access our visualization at http://cse512-14w.github.io/a3-jortiz16-ljorr1/. You can also download the files into one folder, navigate to that folder in the terminal, run `python -m SimpleHTTPServer 8888`, and access it from http://localhost:8888/index.html.
+You can access our visualization at http://cse512-14w.github.io/a3-jortiz16-ljorr1/. You can also download the files into one folder, navigate to that folder in the terminal, run `python -m SimpleHTTPServer 8888`, and access it from http://localhost:8888/index.html using Chrome (we did not test it on other browsers). The version is also meant for larger screens, so make sure to maximize your window. The layout may be suboptimal on a small screen.
 
 ##Background
 The event we wanted to visualize was the Salem Witch Trials, which occurred in Salem, Massachusetts in the late 1600s. During this time, many were accusing others of being witches, using evidence we would now consider unjustifiable. This resulted in a mass hysteria of accusations across Salem Village and surrounding towns throughout 1692. The data we eventually used was a list of accusers, who they accused, when they were accused, and the date the person was executed (if applicable). We additionally had a list of all the accusers and accused, a description of who they were, their age, and if they supported the minister, were against the minister, or did not disclose their opinion.
@@ -45,14 +45,14 @@ For the final visualization, there are two phases. First, the viewer is shown th
 ![Alt text](https://raw.github.com/CSE512-14W/a3-jortiz16-ljorr1/gh-pages/WriteUpPics/FinalVersion.png)
  
 ##Changes Between the Storyboard and Final 
--Slider: The timeline to see events on the visualization was originally intended to be a slider. Upon implementing this, we realized it was difficult to detect if the user placed the slider exactly on one date or another, making our encoding of red edges as events occurring at a particular date ineffective. We decided to work on a feature that allowed the user to click through the events. Once they reached the end, the timeline would restart at the beginning. 
+- Slider: The timeline to see events on the visualization was originally intended to be a slider. Upon implementing this, we realized it was difficult to detect if the user placed the slider exactly on one date or another, making our encoding of red edges as events occurring at a particular date ineffective. We decided to work on a feature that allowed the user to click through the events. Once they reached the end, the timeline would restart at the beginning. 
 - Checkbox: We realized that although clicking a checkbox may be more exciting, it was not the most effective means for communicating village divisions. We could easily use node color to statically represent the three categories of villagers (pro-minister, anti-minister, and unknown). This eliminates possible confusion when using a checkbox and keeps the focus on the accusations over time, not the changing node color.
 - Additional Text Feature: We had initially planned to place the information about each person in a tooltip box once the user hovered her mouse over a node. We decided against this since the descriptions could be long enough to make the tool-tip box occlude important connections. We instead added a text box on the right that described the person in more detail while keeping the tooltip displaying the name.
 - Background Button: Since the user may forget or not read the historical context upon entering our visualization, we decided to add a background information button to allow the user to return to that screen.
 - One of the accused in our dataset died in prison. We felt that even though she was not hung, she was killed because of the witch trials so included that death in our visualization.
 
 ##Development Process
-#Gathering Data
+###Gathering Data
 We found potential datasets at http://www.tulane.edu/~salem/. This website was made by Richard B. Latner, a professor at Tulane University, and his goal is to take viewers through a basic investigation of data he provides on the Salem Witch Trials to shed some light on why the trials occurred. He also produces some basic graphs showing interesting trends such as a histogram of the number of witch accusations over time.
 
 ![Alt text](https://raw.github.com/CSE512-14W/a3-jortiz16-ljorr1/gh-pages/WriteUpPics/Histogram.png)
@@ -103,17 +103,24 @@ The overall time to implement the miscellaneous features and do small changes su
 ###Time Breakdown
 Overall, the data gathering took about 40 hours, the design and coding took about 40 hours, and the write-up took about 7 hours. The hardest part was getting the data we needed and sifting through the court records. We are really pleased with the data we got, and we knew we had to get a lot of it ourselves, but it still took a long time. The coding was not easy, but it was fairly enjoyable and made possible because of google. The most challenging part of the coding was getting the slider to work and getting the node layout to look decent. 
 
+###Possible Improvements
+There were a couple layout issues that we would have liked to change, but we decided fixing these changes was not worth the time it would have taken given that the assignment was to focus on a visualization and interaction. The main problem was the layout of the buttons. We ideally wanted to have a forward arrow and backward arrow next to the slider for the user to click, but neither of us could figure out how to do this. We also wanted to make the layout more dynamic for multiple different window sizes and browsers.
+
 ##Source Code
-Style sheets
-d3.slider.css: style sheet for the slider (this is from: https://github.com/turban/d3.slider)
-style.css: our own style sheet
-HTML
-index.html: our main html page
-Javascript (D3)
-d3.slider.js: javascript file for the slider (this is from: https://github.com/turban/d3.slider)
-interaction.js: our main javascript file that includes all the D3 and interactions
-JPG
-legend.jpg: the picture for our node color legend
-Data Sources
-links.csv: the csv of the links between nodes
-nodes.csv: the csv of the node data
+*Style sheets*  
+d3.slider.css: style sheet for the slider (this is from: https://github.com/turban/d3.slider)  
+style.css: our own style sheet  
+
+*HTML*  
+index.html: our main html page  
+
+*Javascript (D3)*  
+d3.slider.js: javascript file for the slider (this is from: https://github.com/turban/d3.slider)  
+interaction.js: our main javascript file that includes all the D3 and interactions  
+
+*JPG*  
+legend.jpg: the picture for our node color legend  
+
+*Data Sources*  
+links.csv: the csv of the links between nodes  
+nodes.csv: the csv of the node data  
