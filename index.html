@@ -1,30 +1,55 @@
 <html>
-<meta charset="utf-8">
-<head>
-<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="stylesheet" type="text/css" href="d3.slider.css">
-</head>
-<body>
+    <meta charset="utf-8">
 
-<div class="wrapper">
-   <div id="timeline1"></div>
-   <div id="slider1"></div>
-    <div id="textDate"></div>
-</div>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="d3.slider.css">
+    </head>
 
-<div id="option">
-    <input name="updateButton" 
-                 type="button" 
-                value="Next Event" 
-                onclick="updateTimeline()" />
-</div>
-<script src="http://d3js.org/d3.v3.js" charset="utf-8"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
-<script src="interaction.js"></script>
-<script src ="d3.slider.js"></script>
-    <div class="infobox">
-        <p>Here is where we will say something</p>
-    </div>
-</body>
+    <body>
+        <script src="http://d3js.org/d3.v3.js" charset="utf-8"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+        <script src="interaction.js"></script>
+        <script src="d3.slider.js"></script>
+        <div id="title" style="text-align:center"><h4>Accusations and Deaths During the Salem Witch Trials</h4></div>
+        <div class="wrapper">
+            <div id="timeline1"></div>
+            <div id="slider1"></div>
+            <div id="textDate" style="font-size: 14px">Date: </div>
+        </div>
+
+        <div id="option">
+            <input name="updateButton" type="button" value="Next" onclick="updateTimeline()" />
+        </div>
+				<div id="option">
+            <input name="updateButton" type="button" value="Back" onclick="updateTimelineBack()" />
+        </div>
+		
+        <div id="background">
+            <input name="backgroundButton" type="button" value="Background" onclick="overlay()" />
+        </div>
+        <div id="overlay" style = "visibility: visible;">
+             <div>
+                <h2 style="text-align: center;">Historical Context</h2>
+                <p style="font-size: 12px">It's 1962 in Salem Village, Massachusetts. The Salem Witch Trials are about to begin and there has been some recent unrest in the village. In the last 20 years, Salem Village split off from Salem Town and in the 1989, Salem Village hired their first ordained minister, Reverend Samuel Parris.</p>
+                <p style="font-size: 12px">Samuel Parris was a serious, dedicated minister who used his evangelical enthusiasm to enforce psychological rigidity and theological conservatism in Salem Village's religious practices. He upheld very strict standards for church membership which made most preexisting church members happy and non-members displeased. This division is partially shown by examining petition signatures from 1695. Even though this was after the trials ended, the divisions still remained, and in 1695, 84 anti-Parris villagers signed a petition to remove Samuel Parris from office. Shortly after this first petition, 105 pro-Parris villagers signed another petition to keep Samuel Parris in office. Clearly the village was divided, and this conflict forms the backdrop of the beginning of the trials.</p>
+                <p style="font-size: 12px">The trials all begin when Samuel Parris' daughter, Elizabeth, and niece, Abigail Williams, started exhibiting strange and unusual behaviors. These "behaviors" spread until a small group of young women were all acting strangely and muttering ridiculous things. It was not until Samuel Parris unsuccessfully tried to "cure" the girls through religious means and the doctor diagnosed them as being under the influence of Satan that witchcraft was suspected. In addition, one of Parris' Indian servants tried to discover the cause of the girls' behavior by using "magic", which involved feeding a urine cake to a dog. These three events were the final straw to start people making accusations of being afflicted by witchcraft. By the beginning on 1962, the Salem Witch Trials had begun.</p>
+                <p style="font-size: 12px">This interactive visualization portrays the accusations occurring in Salem Village during 1962. Each circle represents a villager who took place in the trials, and as you click through the court trials, arrows between people, representing accusations, appear. To find out a little more about a villager, click on the circle. The shaded groups of villagers represent families, and the colors of the nodes represent what side of the Parris divide they are on. Click the background button to read this information again. Enjoy!</p>
+                <input name="nobackgroundButton" type="button" value="Exit" onclick="overlay()" />
+            </div>
+        </div>
+        <div class="container" id="box1">
+            <svg></svg>
+        </div>
+        <div class="container2" id="box2">
+            <div class="infobox">
+                <p>Name: </p>
+                <p>Age: </p>
+                <p></p>
+            </div>
+        </div>
+        <img src="legend.jpg" alt="legend" width="100" height="130" style="border:50px solid white; float:right;" align="right">
+    </body>
+
 </html>

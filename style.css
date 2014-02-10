@@ -6,59 +6,101 @@ line {
     stroke: #999;
     stroke-opacity: .6;
 }
-
 span {
     color: black;
     font-size: 10px;
     font-weight: bold;
     font-family: verdana;
 }
-
+.container {
+    float: left;
+}
+.container2 {
+    float: right;
+}
 .infobox {
     position: absolute;
+    right: 15px;
+    top: 50%;
     width: 200px;
+    height: 300px;
     padding: 10px;
-    background-color: rgba(255,255,255,1);
+    background-color: rgba(255, 255, 255, 1);
 }
-
 .infobox p {
     color: #f00;
+    font-size: 11px;
+    text-align: left;
+    font-family: verdana;
+}
+/* from http://bl.ocks.org/Caged/6476579 */
+.d3-tip {
+    line-height: 1;
+    font-weight: normal;
+    padding: 5px;
+    background: rgba(255,255,255,1);
+    border-radius: 2px;
+}
+/*from https://gist.github.com/sfrdmn/1437516*/
+.d3-tip:after {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 10px;
+    width: 100%;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.8);
+    content:"\25BC";
+    position: absolute;
+    text-align: center;
+}
+/*from https://gist.github.com/sfrdmn/1437516; used to style northward tooltips differently*/
+.d3-tip.n:after {
+    margin: -1px 0 0 0;
+    top: 100%;
+    left: 0;
+}
+#option {
+    float: right;
+    border: 10px;
+    font-size: 14px;
+    color: #ccc;
+    padding: 20 20px;
+    line-height: 36px;
+}
+#title {
+    font-size: 30px;
     text-align: center;
     font-family: verdana;
 }
-
-/* from http://bl.ocks.org/Caged/6476579 */
-.d3-tip {
-  line-height: 1;
-  font-weight: normal;
-  padding: 5px;
-  background: none;
-  color: #fff;
-  border-radius: 2px;
+body {
+    font-family: verdana;
 }
-
-/*from https://gist.github.com/sfrdmn/1437516*/
-.d3-tip:after {
-  box-sizing: border-box;
-  display: inline;
-  font-size: 10px;
-  width: 100%;
-  line-height: 1;
-  color: rgba(0, 0, 0, 0.8);
-  content: "\25BC";
-  position: absolute;
-  text-align: center;
+/*from http://raventools.com/blog/create-a-modal-dialog-using-css-and-javascript/*/
+#overlay {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 200%;
+    width: 100%;
+    overflow: visible;
+    text-align:center;
+    z-index: 1000;
+    background-color: rgba(0,0,0,0.8);
 }
-
-/*from https://gist.github.com/sfrdmn/1437516; used to style northward tooltips differently*/
-.d3-tip.n:after {
-  margin: -1px 0 0 0;
-  top: 100%;
-  left: 0;
+#overlay div {
+    width: 500px;
+    margin: 100px auto;
+    background-color: #fff;
+    border:1px solid #000;
+    padding: 15px;
+    text-align: left;
 }
-
-#option
-{
-  float:right;
-  width:200px;
+/*from http://cbjdigital.com/blog/2010/08/bulletproof_css_input_button_heights*/
+#background {
+    float: left;
+    border: 10px;
+    font-size: 14px;
+    color: #ccc;
+    padding: 20 20px;
+    line-height: 36px;
 }
