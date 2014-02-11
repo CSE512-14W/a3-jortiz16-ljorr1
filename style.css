@@ -84,11 +84,11 @@ body {
 /*from http://raventools.com/blog/create-a-modal-dialog-using-css-and-javascript/*/
 #overlay {
     position: absolute;
-    left: 0px;
     top: 0px;
-    height: 100%;
+    left: 0px;
+    margin: 0 auto;
     width: 100%;
-    overflow: visible;
+    min-height: 100%;
     text-align:center;
     z-index: 1000;
     background-color: rgba(0,0,0,0.8);
