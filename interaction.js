@@ -40,8 +40,6 @@ function updateTimeline() {
    // console.log(valueSlider);
     
 }
-
-
 function updateTimelineBack() {
 
     //restart
@@ -61,7 +59,8 @@ var yearsUNIQUE = [];
 var deathDates = [];
 var valueSlider = 0;
 var counter = 0;
-
+//$('#overlay').css("height", "auto");
+//console.log($('#overlay').css('visibility'));
 
 d3.csv("nodes.csv", function(error1, nodes) {
     d3.csv("links.csv", function(error2, edges) {
